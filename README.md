@@ -1,40 +1,66 @@
-## Minimal [(Free version)](https://minimal-kit-react.vercel.app/)
+# React Event Mini App
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
+## Commands
 
-> Free React Admin Dashboard made with Material-UI components and React.
+Running locally:
 
-![preview](public/assets/preview.jpg)
+Install the dependencies:
 
-| [Minimal Free](https://minimal-kit-react.vercel.app/) | [Minimal](https://material-ui.com/store/items/minimal-dashboard/) |
-| ----------------------------------------------------- | :---------------------------------------------------------------- |
-| **6** Demo pages                                      | **50+** demo pages                                                |
-| -                                                     | ✓ Multi-language                                                  |
-| -                                                     | ✓ Dark/Light Mode 🌓                                              |
-| -                                                     | ✓ [More components](https://minimals.cc/components)               |
-| -                                                     | ✓ Next.js version                                                 |
-| -                                                     | ✓ TypeScript version                                              |
-| -                                                     | ✓ Design files (Figma & Sketch)                                   |
+```bash
+yarn
+```
 
-## Page demo
+Backend:
 
-- [Dashboard](https://minimal-kit-react.vercel.app/dashboard/app)
-- [Users](https://minimal-kit-react.vercel.app/dashboard/user)
-- [Product](https://minimal-kit-react.vercel.app/dashboard/products)
-- [Blog](https://minimal-kit-react.vercel.app/dashboard/blog)
-- [Login](https://minimal-kit-react.vercel.app/login)
-- [Not Found](https://minimal-kit-react.vercel.app/404)
+```bash
+cd backend && yarn
+```
 
-## Getting started
+Set the environment variables:
 
-- Recommended `node js 16.x` and `npm 6+`. (suggestion v16.15.0)
-- Install dependencies: `npm install` / `yarn install`
-- Start the project: `npm run start` / `yarn start`
+```bash
+cp .env.example .env
+```
 
-## License
+## Project Structure
 
-Distributed under the MIT License. See [LICENSE](https://github.com/minimal-ui-kit/minimal.free/blob/main/LICENSE.md) for more information.
+```
+frontend\
+ |--backend\         # backend project
+ |--...
+ |--...
+```
 
-## Contact us
+## To run migration
 
-Email Us: support@minimals.cc
+```bash
+cd backend && npx sequelize-cli db:migrate --config config/config.json
+
+```
+
+## Cron Job
+
+To change the cron job time follow the following instructions and apply in app.js
+
+┌────────────── second (0 - 59) (optional)
+│ ┌──────────── minute (0 - 59)
+│ │ ┌────────── hour (0 - 23)
+│ │ │ ┌──────── day of the month (1 - 31)
+│ │ │ │ ┌────── month (1 - 12)
+│ │ │ │ │ ┌──── day of the week (0 - 6) (0 and 7 both represent Sunday)
+│ │ │ │ │ │
+│ │ │ │ │ │
+
+---
+
+## Backend Linting
+
+Linting is done using [ESLint](https://eslint.org/) and [Prettier](https://prettier.io).
+
+In this app, ESLint is configured to follow the [Airbnb JavaScript style guide](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) with some modifications. It also extends [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) to turn off all rules that are unnecessary or might conflict with Prettier.
+
+To modify the ESLint configuration, update the `.eslintrc.json` file. To modify the Prettier configuration, update the `.prettierrc.json` file.
+
+To prevent a certain file or directory from being linted, add it to `.eslintignore` and `.prettierignore`.
+
+To maintain a consistent coding style across different IDEs, the project contains `.editorconfig`
