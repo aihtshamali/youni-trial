@@ -27,6 +27,13 @@ cd backend && cp .env.example .env
  also change the environment variables in backend/config/config.json for sequelize-cli
 ```
 
+
+## Serve the project
+
+```bash
+yarn start
+```
+
 ## Project Structure
 
 ```
