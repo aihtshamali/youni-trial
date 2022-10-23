@@ -45,6 +45,7 @@ cd backend && npx sequelize-cli db:migrate --config config/config.json
 
 ## Cron Job
 
+```
 To change the cron job time follow the following instructions and apply in app.js
 
 ┌────────────── second (0 - 59) (optional)
@@ -56,7 +57,8 @@ To change the cron job time follow the following instructions and apply in app.j
 │ │ │ │ │ │
 │ │ │ │ │ │
 
-\* \* \* \* \* \*
+* * * * * *
+```
 
 ## Backend Linting
 
