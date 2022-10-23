@@ -20,6 +20,11 @@ Set the environment variables:
 
 ```bash
 cp .env.example .env
+cd backend && cp .env.example .env
+```
+
+```
+ also change the environment variables in backend/config/config.json for sequelize-cli
 ```
 
 ## Project Structure
@@ -51,7 +56,7 @@ To change the cron job time follow the following instructions and apply in app.j
 │ │ │ │ │ │
 │ │ │ │ │ │
 
----
+\* \* \* \* \* \*
 
 ## Backend Linting
 

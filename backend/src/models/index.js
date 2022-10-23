@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const dbConfig = require('../config/config');
 
 // Database connection
-const sequelize = new Sequelize('yuni', 'postgres', '1234', {
+const sequelize = new Sequelize(dbConfig.postgres.DB, dbConfig.postgres.User, dbConfig.postgres.PWD, {
   host: dbConfig.HOST,
   dialect: 'postgres',
 

@@ -236,7 +236,7 @@ export default function EventPage() {
 
                         <TableCell align="left">{description}</TableCell>
                         <TableCell align="left">£{price || 0}</TableCell>
-                        <TableCell align="left">£{(0.1*price)*attendees}</TableCell>
+                        <TableCell align="left">£{((0.1*price)*attendees).toFixed(2)}</TableCell>
                         <TableCell align="left">{attendees || 0}</TableCell>
                         <TableCell align="left">{location}</TableCell>
                         <TableCell align="left">{moment(eventAt).format('MMMM Do YYYY, h:mm:ss a')}</TableCell>
